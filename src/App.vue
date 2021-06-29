@@ -4,6 +4,7 @@
 			<!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> -->
 			<top-bar></top-bar>
+			<main-panel></main-panel>
 		</div>
 	</div>
 </template>
@@ -11,10 +12,11 @@
 <script>
 // import MainPanel from '@/views/MainPanel.vue';
 import TopBar from '@/components/TopBar.vue';
+import MainPanel from './views/MainPanel.vue';
 
 export default {
 	name: 'App',
-	components: { TopBar },
+	components: { TopBar, MainPanel },
 };
 </script>
 

@@ -2,16 +2,20 @@
 	<div class="main-container">
 		<!-- <user-panel></user-panel>
 		<tasks-panel></tasks-panel> -->
-		<router-view />
+		<user-panel></user-panel>
+		<tasks-panel></tasks-panel>
+		<details-panel></details-panel>
+		<!-- <router-view name="a" /> -->
 	</div>
 </template>
 
 <script>
-// import UserPanel from '@/components/UserPanel.vue';
-// import TasksPanel from '@/components/TasksPanel.vue';
-// // import DetailsPanel from '@/components/DetailsPanel.vue';
+import DetailsPanel from './DetailsPanel.vue';
+import TasksPanel from './TasksPanel.vue';
+import UserPanel from './UserPanel.vue';
+
 export default {
-	components: {},
+	components: { UserPanel, TasksPanel, DetailsPanel },
 };
 </script>
 

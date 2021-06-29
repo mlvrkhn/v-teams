@@ -1,6 +1,8 @@
 <template>
 	<div class="column details-container">
-		<h2>Task Title</h2>
+		<h2>
+			<div>User {{ $route.path }}</div>
+		</h2>
 		<p>20.02.2020</p>
 		<p>
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis
@@ -15,7 +17,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+	props: ['task'],
+	// create task detail json structure
+	// create store content
+	// get props from the store
+};
 </script>
 
 <style scoped>

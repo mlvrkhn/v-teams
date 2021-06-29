@@ -1,14 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import MainPanel from '@/views/MainPanel.vue';
+import DetailsPanel from '../views/DetailsPanel.vue';
 
 Vue.use(VueRouter);
+// const Foo = { template: '<div>foo</div>' };
 
 const routes = [
 	{
 		path: '/',
-		redirect: '/task/1',
-		// component: MainPanel,
+		redirect: '/task/:id',
+		component: {
+			a: DetailsPanel,
+		},
 	},
 	// {
 	//   path: '/',
