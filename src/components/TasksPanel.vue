@@ -1,28 +1,34 @@
 <template>
 	<div class="column">
 		<ul class="task-list">
-			<li>
-				<div class="task-item">
-					<div>✅</div>
-					<div>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing
-						</p>
-						<p>20.02.2020</p>
+			<router-link to="/task/1">
+				<li>
+					<div class="task-item">
+						<div>✅</div>
+						<div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing
+							</p>
+							<p>20.02.2020</p>
+						</div>
 					</div>
-				</div>
-			</li>
-			<li>
-				<div class="task-item">
-					<div>✅</div>
-					<div>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing
-						</p>
-						<p>20.02.2020</p>
+				</li>
+			</router-link>
+			<router-link to="/task/2">
+				<li>
+					<div class="task-item">
+						<div>✅</div>
+						<div>
+							<p>
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing
+							</p>
+							<p>20.02.2020</p>
+						</div>
 					</div>
-				</div>
-			</li>
+				</li></router-link
+			>
 		</ul>
 	</div>
 </template>

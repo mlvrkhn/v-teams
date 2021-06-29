@@ -1,9 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+// import MainPanel from '@/views/MainPanel.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
+	{
+		path: '/',
+		redirect: '/task/1',
+		// component: MainPanel,
+	},
 	// {
 	//   path: '/',
 	//   name: 'Home',
