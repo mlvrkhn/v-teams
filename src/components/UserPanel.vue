@@ -2,6 +2,7 @@
 	<div class="column user-panel-container">
 		<div class="user-container">
 			<div class="user-personal-data">
+				<img src="@/assets/face.svg" class="user-personal-avatar" />
 				<h2>Martin Gawlyta</h2>
 				<p>mrtn.dev@aol.com</p>
 			</div>
@@ -32,8 +33,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="projects-container"></div>
-		<div class="team-container"></div>
+		<div class="projects-container">PROJECTS</div>
+		<div class="team-container">TEAM</div>
 	</div>
 </template>
 
@@ -52,11 +53,18 @@ export default {};
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+	justify-content: space-between;
 }
 .task-numeric-summary {
 	display: flex;
+	width: 100%;
+	justify-content: space-around;
 }
 .task-numeric-summary * p {
 	font-size: 10px;
+	display: flex;
+}
+.user-personal-avatar {
+	height: 80px;
 }
 </style>

@@ -1,15 +1,17 @@
 <template>
 	<div class="main-container">
 		<user-panel></user-panel>
-		<div class="column">2</div>
-		<div class="column">3</div>
+		<tasks-panel></tasks-panel>
+		<details-panel></details-panel>
 	</div>
 </template>
 
 <script>
 import UserPanel from '@/components/UserPanel.vue';
+import TasksPanel from '@/components/TasksPanel.vue';
+import DetailsPanel from '@/components/DetailsPanel.vue';
 export default {
-	components: { UserPanel },
+	components: { UserPanel, TasksPanel, DetailsPanel },
 };
 </script>
 
