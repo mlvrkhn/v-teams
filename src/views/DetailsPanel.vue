@@ -22,10 +22,7 @@ export default {
 	// create task detail json structure
 	// create store content
 	// get props from the store
-	created() {
-		console.log('I am created');
-		TaskService.getEvents();
-	},
+
 	computed: {
 		userName() {
 			return this.$store.state.user.name;

@@ -16,6 +16,20 @@ import UserPanel from './UserPanel.vue';
 
 export default {
 	components: { UserPanel, TasksPanel, DetailsPanel },
+	data() {
+		return {
+			tasks: [],
+		};
+	},
+	created() {
+		this.$store.dispatch('fetchEvents');
+	},
+	computed: {
+		// parsedDate() {
+		// 	const eventDate = new Date(this.event.date);
+		// 	return eventDate.toDateString();
+		// },
+	},
 };
 </script>
 

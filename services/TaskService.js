@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-	baseURL: 'http://my-json-server.typicode.com/Code-Pop/real-world-nuxt/',
+	baseURL: 'http://my-json-server.typicode.com/mlvrkhn/v-teams/',
 	withCredentials: false,
 	headers: {
 		Accept: 'application/json',
@@ -11,7 +11,7 @@ const apiClient = axios.create({
 
 export default {
 	getEvents() {
-		return apiClient.get('/events');
+		return apiClient.get('/tasks');
 	},
 	getEvent(id) {
 		return apiClient.get('/events/' + id);
