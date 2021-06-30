@@ -14,6 +14,6 @@ export default {
 		return apiClient.get('/tasks');
 	},
 	getEvent(id) {
-		return apiClient.get('/events/' + id);
+		return apiClient.get('/tasks/' + id);
 	},
 };

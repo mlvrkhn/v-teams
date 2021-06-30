@@ -11,10 +11,14 @@ export default new Vuex.Store({
 			name: 'Maritn Dolorez',
 		},
 		tasks: [],
+		task: {},
 	},
 	mutations: {
 		SET_TASKS(state, tasks) {
 			state.tasks = tasks;
+		},
+		SET_TASK(state, task) {
+			state.task = task;
 		},
 	},
 	actions: {
@@ -23,14 +27,15 @@ export default new Vuex.Store({
 				commit('SET_TASKS', res.data);
 			});
 		},
+		fetchEvent({ commit }, id) {
+			return TaskService.getEvent(id).then(res => {
+				commit('SET_TASK', res.data);
+			});
+		},
 	},
 	getters: {
 		getTaskByID: state => id => {
-			console.log(
-				'lolol',
-				state.tasks.find(t => t.id === id)
-			);
-			return state.tasks.find(t => t.id === id);
+			return state.tasks.find(task => task.id === id);
 		},
 	},
 	modules: {},

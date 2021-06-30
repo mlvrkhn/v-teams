@@ -1,19 +1,18 @@
 <template>
-	<ul class="task-list">
+	<li>
 		<router-link :to="{ name: 'tasks', params: { id: task.id } }">
-			<li>
+			<div class="task-item-container">
+				<div>✅</div>
 				<div class="task-item">
-					<div>✅</div>
-					<div>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing
-						</p>
-						<p>20.02.2020</p>
-					</div>
+					<h3>{{ task.title }}</h3>
+					<p class="task-item-title">
+						{{ task.description }}
+					</p>
+					<p class="task-item-date">{{ task.date }}</p>
 				</div>
-			</li>
+			</div>
 		</router-link>
-	</ul>
+	</li>
 </template>
 
 <script>
@@ -25,16 +24,27 @@ export default {
 </script>
 
 <style scoped>
-.task-item {
+.task-item-container {
 	display: flex;
 	align-items: center;
-	height: 80px;
+	height: 60px;
 	border: 1px solid goldenrod;
-	padding: 0 10px;
+	padding: 0.5rem;
+}
+.task-item-container:hover {
+	background-color: rgb(241, 116, 141);
+}
+.task-item {
+	display: flex;
+	text-align: left;
+	margin-left: 0.5rem;
+	flex-direction: column;
+}
+.task-item-title {
 	font-size: 12px;
 }
-.task-list {
-	list-style: none;
-	padding: 0;
+.task-item-date {
+	font-size: 9px;
+	margin: 0;
 }
 </style>

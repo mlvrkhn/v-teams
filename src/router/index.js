@@ -13,7 +13,7 @@ const routes = [
 		path: '/tasks/:id',
 		name: 'tasks',
 		component: DetailsPanel,
-		props: true,
+		// props: true,
 	},
 ];
 
