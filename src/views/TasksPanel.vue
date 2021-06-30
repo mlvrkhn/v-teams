@@ -1,7 +1,8 @@
 <template>
 	<div class="column">
 		<ul class="task-list">
-			<router-link to="/task/1">
+			<!-- <router-link to="/task/1"> -->
+			<router-link :to="{ name: 'task', params: { id: 1 } }">
 				<li>
 					<div class="task-item">
 						<div>✅</div>
@@ -15,7 +16,7 @@
 					</div>
 				</li>
 			</router-link>
-			<router-link to="/task/2">
+			<router-link :to="{ name: 'task', params: { id: 2 } }">
 				<li>
 					<div class="task-item">
 						<div>✅</div>
@@ -44,6 +45,7 @@ export default {};
 	height: 80px;
 	border: 1px solid goldenrod;
 	padding: 0 10px;
+	font-size: 12px;
 }
 .task-list {
 	list-style: none;

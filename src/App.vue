@@ -1,8 +1,6 @@
 <template>
 	<div id="app">
 		<div id="nav">
-			<!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
 			<top-bar></top-bar>
 			<main-panel></main-panel>
 		</div>
@@ -10,7 +8,6 @@
 </template>
 
 <script>
-// import MainPanel from '@/views/MainPanel.vue';
 import TopBar from '@/components/TopBar.vue';
 import MainPanel from './views/MainPanel.vue';
 
