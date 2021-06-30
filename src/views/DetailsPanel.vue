@@ -1,7 +1,7 @@
 <template>
 	<div class="column details-container">
 		<h2>
-			<div>Usero {{ userName }}</div>
+			<div>{{ task }}</div>
 		</h2>
 		<p>20.02.2020</p>
 		<p>
@@ -18,16 +18,27 @@
 
 <script>
 export default {
-	// props: ['task'],
+	props: {
+		task: Object,
+	},
+	created() {
+		this.getTask();
+	},
+	computed: {
+		// getTask() {
+		// 	console.log(this.$route.params.id);
+		// 	return this.$store.state.tasks.filter(
+		// 		t => t === t[this.$route.params.id]
+		// 	);
+		// },
+		getTask() {
+			console.log(this.$route);
+			return this.$store.getters.getTaskByID;
+		},
+	},
 	// create task detail json structure
 	// create store content
 	// get props from the store
-
-	computed: {
-		userName() {
-			return this.$store.state.user.name;
-		},
-	},
 };
 </script>
 

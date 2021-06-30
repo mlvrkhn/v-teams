@@ -24,5 +24,14 @@ export default new Vuex.Store({
 			});
 		},
 	},
+	getters: {
+		getTaskByID: state => id => {
+			console.log(
+				'lolol',
+				state.tasks.find(t => t.id === id)
+			);
+			return state.tasks.find(t => t.id === id);
+		},
+	},
 	modules: {},
 });

@@ -7,11 +7,12 @@ Vue.use(VueRouter);
 const routes = [
 	{
 		path: '/',
-		name: 'task',
-		redirect: '/task/:id',
-		component: {
-			DetailsPanel,
-		},
+		redirect: '/tasks/1',
+	},
+	{
+		path: '/tasks/:id',
+		name: 'tasks',
+		component: DetailsPanel,
 		props: true,
 	},
 ];
