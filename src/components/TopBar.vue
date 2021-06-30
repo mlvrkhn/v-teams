@@ -2,6 +2,7 @@
 	<div class="top-bar">
 		<div class="bar">TASK MANAGER</div>
 		<div class="bar">
+			<!-- move to component -->
 			<button>ADD NEW</button>
 			<input type="text" placeholder="Search" />
 		</div>

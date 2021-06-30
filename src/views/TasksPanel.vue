@@ -24,11 +24,15 @@ export default {
 </script>
 
 <style scoped>
+li a {
+	text-decoration: none;
+	color: #fff;
+}
 .task-item-container {
 	display: flex;
 	align-items: center;
 	height: 60px;
-	border: 1px solid goldenrod;
+	border-bottom: 1px solid rgb(189, 189, 189);
 	padding: 0.5rem;
 }
 .task-item-container:hover {
@@ -42,6 +46,8 @@ export default {
 }
 .task-item-description {
 	font-size: 12px;
+	font-weight: 400;
+	outline: none;
 }
 .task-item-date {
 	font-size: 9px;

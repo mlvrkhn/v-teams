@@ -3,7 +3,7 @@
 		<div class="user-container">
 			<div class="user-personal-data">
 				<img src="@/assets/face.svg" class="user-personal-avatar" />
-				<h2>Martin Gawlyta</h2>
+				<h2 class="user-personal-name">Martin Gawlyta</h2>
 				<p>mrtn.dev@aol.com</p>
 			</div>
 			<div class="user-notifications">
@@ -52,6 +52,7 @@ export default {
 	flex-direction: column;
 	justify-items: center;
 	align-items: center;
+	margin-top: 2rem;
 }
 .user-panel-container {
 	display: flex;
@@ -59,12 +60,12 @@ export default {
 	align-items: stretch;
 	justify-content: space-between;
 }
-.user-container {
-	/* margin-top: 2rem; */
+.user-personal-name {
+	font-weight: 700;
 }
 .task-numeric-summary {
 	display: flex;
-	width: 100%;
+	width: 70%;
 	justify-content: space-around;
 }
 .task-numeric-summary * p {

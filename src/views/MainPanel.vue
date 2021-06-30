@@ -15,7 +15,6 @@
 </template>
 
 <script>
-// import DetailsPanel from './DetailsPanel.vue';
 import TasksPanel from './TasksPanel.vue';
 import UserPanel from './UserPanel.vue';
 import { mapState } from 'vuex';

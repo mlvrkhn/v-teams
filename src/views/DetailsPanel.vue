@@ -24,9 +24,6 @@ export default {
 		taskID() {
 			return this.$route.params.id;
 		},
-		task() {
-			return this.$store.getters.getTaskByID(this.taskID);
-		},
 		...mapState(['task']),
 	},
 	methods: {
@@ -39,7 +36,6 @@ export default {
 .details-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid red;
 	padding: 1rem;
 	text-align: left;
 }
