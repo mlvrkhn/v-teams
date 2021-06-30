@@ -37,6 +37,12 @@ export default new Vuex.Store({
 		getTaskByID: state => id => {
 			return state.tasks.find(task => task.id === id);
 		},
+		completedTaskCount: state => {
+			return state.tasks.filter(task => task.isCompleted).length || 0;
+		},
+		notCompletedTaskCount: state => {
+			return state.tasks.filter(task => !task.isCompleted).length || 0;
+		},
 	},
 	modules: {},
 });

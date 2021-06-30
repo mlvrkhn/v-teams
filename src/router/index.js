@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
 	{
 		path: '/',
-		redirect: '/tasks/1',
+		redirect: '/tasks/291239',
 	},
 	{
 		path: '/tasks/:id',

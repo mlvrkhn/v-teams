@@ -5,7 +5,7 @@
 				<div>✅</div>
 				<div class="task-item">
 					<h3>{{ task.title }}</h3>
-					<p class="task-item-title">
+					<p class="task-item-description cut-text">
 						{{ task.description }}
 					</p>
 					<p class="task-item-date">{{ task.date }}</p>
@@ -40,11 +40,18 @@ export default {
 	margin-left: 0.5rem;
 	flex-direction: column;
 }
-.task-item-title {
+.task-item-description {
 	font-size: 12px;
 }
 .task-item-date {
 	font-size: 9px;
 	margin: 0;
+}
+.cut-text {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 300px;
+	height: 1.2em;
+	white-space: nowrap;
 }
 </style>

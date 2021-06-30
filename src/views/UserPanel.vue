@@ -18,11 +18,11 @@
 					</div>
 					<div class="task-numeric-summary">
 						<span>
-							<h3>12</h3>
+							<h3>{{ completedTaskCount }}</h3>
 							<p>Completed</p>
 						</span>
 						<span>
-							<h3>22</h3>
+							<h3>{{ notCompletedTaskCount }}</h3>
 							<p>To Do</p>
 						</span>
 						<span>
@@ -39,7 +39,11 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from 'vuex';
+
+export default {
+	computed: mapGetters(['completedTaskCount', 'notCompletedTaskCount']),
+};
 </script>
 
 <style scoped>
@@ -55,6 +59,9 @@ export default {};
 	align-items: stretch;
 	justify-content: space-between;
 }
+.user-container {
+	/* margin-top: 2rem; */
+}
 .task-numeric-summary {
 	display: flex;
 	width: 100%;
@@ -63,6 +70,9 @@ export default {};
 .task-numeric-summary * p {
 	font-size: 10px;
 	display: flex;
+}
+.user-personal-data > * {
+	margin: 20px 0;
 }
 .user-personal-avatar {
 	height: 80px;
