@@ -36,7 +36,7 @@ li a {
 	padding: 0.5rem;
 }
 .task-item-container:hover {
-	background-color: rgb(241, 116, 141);
+	background-color: rgb(167, 167, 167);
 }
 .task-item {
 	display: flex;

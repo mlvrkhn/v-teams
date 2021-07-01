@@ -25,11 +25,6 @@ export default {
 		this.$store.dispatch('fetchEvents');
 	},
 	computed: mapState(['tasks']),
-
-	// parsedDate() {
-	// 	const eventDate = new Date(this.event.date);
-	// 	return eventDate.toDateString();
-	// },
 };
 </script>
 

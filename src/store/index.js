@@ -20,6 +20,9 @@ export default new Vuex.Store({
 		SET_TASK(state, task) {
 			state.task = task;
 		},
+		CREATE_TASK(state, task) {
+			state.tasks.push(task);
+		},
 	},
 	actions: {
 		fetchEvents({ commit }) {
@@ -31,6 +34,9 @@ export default new Vuex.Store({
 			return TaskService.getEvent(id).then(res => {
 				commit('SET_TASK', res.data);
 			});
+		},
+		createTask({ commit }, task) {
+			commit('CREATE_TASK', task);
 		},
 	},
 	getters: {

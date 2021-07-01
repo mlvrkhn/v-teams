@@ -2,15 +2,20 @@
 	<div class="top-bar">
 		<div class="bar">TASK MANAGER</div>
 		<div class="bar">
-			<!-- move to component -->
-			<button>ADD NEW</button>
+			<submit-button></submit-button>
 			<input type="text" placeholder="Search" />
 		</div>
 	</div>
 </template>
 
 <script>
-export default {};
+import SubmitButton from './SubmitButton.vue';
+
+export default {
+	components: {
+		SubmitButton,
+	},
+};
 </script>
 
 <style scoped>
