@@ -2,13 +2,7 @@
 	<div class="main-container">
 		<user-panel></user-panel>
 		<div class="column">
-			<ul class="task-list">
-				<tasks-panel
-					v-for="(task, index) in tasks"
-					:task="task"
-					:key="index"
-				></tasks-panel>
-			</ul>
+			<tasks-panel></tasks-panel>
 		</div>
 		<router-view :key="$route.fullPath" />
 	</div>
@@ -24,7 +18,9 @@ export default {
 	created() {
 		this.$store.dispatch('fetchEvents');
 	},
-	computed: mapState(['tasks']),
+	computed: {
+		...mapState(['tasks']),
+	},
 };
 </script>
 
@@ -37,11 +33,6 @@ export default {
 }
 .column {
 	width: 100%;
-	border: 1px solid black;
-}
-.task-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+	border: 1px solid darkgrey;
 }
 </style>

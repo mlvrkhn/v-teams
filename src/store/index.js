@@ -12,7 +12,8 @@ export default new Vuex.Store({
 		},
 		tasks: [],
 		task: {},
-		projects: ['Development', 'Sport', 'Health', 'Social'],
+		projects: ['Development', 'Sport', 'Health', 'Social', 'All'],
+		activeFilter: 'Social',
 	},
 	mutations: {
 		SET_TASKS(state, tasks) {

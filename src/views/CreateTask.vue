@@ -1,7 +1,7 @@
 <template>
 	<div class="form-container">
 		<h1>Add new task</h1>
-		<form @submit.prevent="handleSubmit">
+		<form class="task-form" @submit.prevent="handleSubmit">
 			<input type="text" placeholder="Title" v-model="task.title" />
 			<textarea
 				type="text"
@@ -12,7 +12,11 @@
 				<option>Teambuilding</option>
 				<option>Other</option>
 			</select>
-			<datepicker v-model="task.date" placeholder="Select a date" />
+			<datepicker
+				class="datepicker"
+				v-model="task.date"
+				placeholder="Select a date"
+			/>
 			<button type="submit">Add</button>
 		</form>
 	</div>
@@ -56,10 +60,6 @@ export default {
 				attendees: [],
 			};
 		},
-		// formatDate(date) {
-		// 	console.log(moment(date).format('dd MMMM YYYY'));
-		// 	return moment(date).format('dd MMMM YYYY');
-		// },
 	},
 	components: {
 		Datepicker,
@@ -69,10 +69,18 @@ export default {
 
 <style scoped>
 .form-container {
-	padding: 0 20%;
-	border: 1px solid salmon;
+	border: 1px solid darkgray;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+.task-form {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	justify-content: center;
+}
+.datepicker {
+	text-align: center;
 }
 </style>

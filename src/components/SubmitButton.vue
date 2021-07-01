@@ -1,6 +1,6 @@
 <template>
 	<router-link to="/tasks/create">
-		<button type="submit">ADD NEW</button>
+		<button class="submit-button" type="submit">ADD NEW</button>
 	</router-link>
 </template>
 
@@ -8,4 +8,7 @@
 export default {};
 </script>
 
-<style scoped></style>
+<style scoped>
+.submit-button {
+}
+</style>

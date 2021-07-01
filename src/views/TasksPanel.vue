@@ -1,43 +1,64 @@
 <template>
-	<li>
-		<div class="task-item-container">
-			<label for="toggle_button">
-				<!-- <span v-if="isActive">✅</span>
-				<span v-if="!isActive">🍄</span> -->
-				<input
-					type="checkbox"
-					class="toggle_button"
-					id="toggle-button"
-					@click="toggleTaskStatus"
-				/>
-			</label>
-			<router-link
-				:to="{ name: 'tasks', params: { id: task.id } }"
-				class="link"
+	<div class="list-items-container">
+		<ul class="task-list">
+			<li
+				v-for="(task, index) in filteredTasks"
+				:task="task"
+				:key="index"
 			>
-				<div class="task-item">
-					<h3>{{ task.title }}</h3>
-					<p class="task-item-description cut-text">
-						{{ task.description }}
-					</p>
-					<p class="task-item-date">{{ task.date }}</p>
+				<div class="task-item-container">
+					<label for="toggle_button">
+						<input
+							type="checkbox"
+							class="toggle_button"
+							id="toggle-button"
+							@click="toggleTaskStatus(task.id)"
+						/>
+					</label>
+					<router-link
+						:to="{ name: 'tasks', params: { id: task.id } }"
+						class="link"
+					>
+						<div class="task-item">
+							<h3>{{ task.title }}</h3>
+							<p class="task-item-description cut-text">
+								{{ task.description }}
+							</p>
+							<p class="task-item-date">{{ task.date }}</p>
+						</div>
+					</router-link>
 				</div>
-			</router-link>
-		</div>
-	</li>
+			</li>
+		</ul>
+		<submit-button></submit-button>
+	</div>
 </template>
 
 <script>
+import SubmitButton from '../components/SubmitButton.vue';
+
+import { mapState } from 'vuex';
 export default {
+	components: {
+		SubmitButton,
+	},
 	props: {
 		task: Object,
 	},
 	methods: {
-		toggleTaskStatus() {
-			this.$store.dispatch('toggleTaskStatus', this.task.id);
+		toggleTaskStatus(id) {
+			this.$store.dispatch('toggleTaskStatus', id);
 		},
 	},
 	computed: {
+		...mapState(['tasks', 'activeFilter']),
+		filteredTasks() {
+			return this.tasks.filter(task => {
+				if (task.category === this.activeFilter) {
+					return task;
+				}
+			});
+		},
 		isActive() {
 			return this.task.isCompleted;
 		},
@@ -50,11 +71,25 @@ li a {
 	text-decoration: none;
 	color: #fff;
 }
+.list-items-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+/* .task-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+} */
 .task-item-container {
 	display: flex;
 	align-items: center;
 	height: 60px;
-	border-bottom: 1px solid rgb(189, 189, 189);
+	border-bottom: 1px solid darkgrey;
 	padding: 0.5rem;
 }
 .task-item-container:hover {
