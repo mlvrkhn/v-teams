@@ -2,15 +2,19 @@
 	<li>
 		<div class="task-item-container">
 			<label for="toggle_button">
-				<span v-if="isActive">✅</span>
-				<span v-if="!isActive">🍄</span>
+				<!-- <span v-if="isActive">✅</span>
+				<span v-if="!isActive">🍄</span> -->
 				<input
 					type="checkbox"
-					id="toggle_button"
+					class="toggle_button"
+					id="toggle-button"
 					@click="toggleTaskStatus"
 				/>
 			</label>
-			<router-link :to="{ name: 'tasks', params: { id: task.id } }">
+			<router-link
+				:to="{ name: 'tasks', params: { id: task.id } }"
+				class="link"
+			>
 				<div class="task-item">
 					<h3>{{ task.title }}</h3>
 					<p class="task-item-description cut-text">
@@ -61,6 +65,7 @@ li a {
 	text-align: left;
 	margin-left: 0.5rem;
 	flex-direction: column;
+	/* width: 100%; */
 }
 .task-item-description {
 	font-size: 12px;
@@ -73,9 +78,15 @@ li a {
 }
 .cut-text {
 	text-overflow: ellipsis;
+	-webkit-line-clamp: 3;
 	overflow: hidden;
-	width: 300px;
 	height: 1.2em;
 	white-space: nowrap;
+}
+.toggle-button {
+	display: hidden;
+}
+.link {
+	width: 95%;
 }
 </style>

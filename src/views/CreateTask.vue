@@ -2,7 +2,6 @@
 	<div class="form-container">
 		<h1>Add new task</h1>
 		<form @submit.prevent="handleSubmit">
-			<input type="text" placeholder="Name" v-model="task.name" />
 			<input type="text" placeholder="Title" v-model="task.title" />
 			<textarea
 				type="text"
@@ -21,6 +20,7 @@
 
 <script>
 import Datepicker from 'vuejs-datepicker';
+import TaskService from '../../services/TaskService';
 
 export default {
 	data() {
@@ -33,9 +33,11 @@ export default {
 			this.$store
 				.dispatch('createTask', this.task)
 				.then(() => {
-					this.event = this.createNewTask();
+					TaskService.postEvent(this.task);
+					this.task = this.createNewTask();
 				})
-				.catch(() => {
+				.catch(err => {
+					console.log(err.message);
 					console.log('Something went wrong with you TASK');
 				});
 		},
@@ -54,6 +56,10 @@ export default {
 				attendees: [],
 			};
 		},
+		// formatDate(date) {
+		// 	console.log(moment(date).format('dd MMMM YYYY'));
+		// 	return moment(date).format('dd MMMM YYYY');
+		// },
 	},
 	components: {
 		Datepicker,

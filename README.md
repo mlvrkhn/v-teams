@@ -1,24 +1,20 @@
-# teams
+# Teams
 
-## Project setup
-```
-npm install
-```
+Reactive tasks app based on Microsoft Teams. Made with Vue, Vuex.
 
-### Compiles and hot-reloads for development
+### Project setup, compiles and hot-reloads for development
+
 ```
+npm i
 npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### To Do
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+-   is Completed in Details Panel is not reactive
