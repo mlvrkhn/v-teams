@@ -30,7 +30,14 @@ export default {
 	},
 	methods: {
 		handleSubmit() {
-			this.$store.dispatch('createTask', this.task);
+			this.$store
+				.dispatch('createTask', this.task)
+				.then(() => {
+					this.event = this.createNewTask();
+				})
+				.catch(() => {
+					console.log('Something went wrong with you TASK');
+				});
 		},
 		createNewTask() {
 			const id = Math.floor(Math.random() * 10000000);

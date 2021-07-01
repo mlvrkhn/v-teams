@@ -1,8 +1,16 @@
 <template>
 	<li>
-		<router-link :to="{ name: 'tasks', params: { id: task.id } }">
-			<div class="task-item-container">
-				<div>✅</div>
+		<div class="task-item-container">
+			<label for="toggle_button">
+				<span v-if="isActive">✅</span>
+				<span v-if="!isActive">🍄</span>
+				<input
+					type="checkbox"
+					id="toggle_button"
+					@click="toggleTaskStatus"
+				/>
+			</label>
+			<router-link :to="{ name: 'tasks', params: { id: task.id } }">
 				<div class="task-item">
 					<h3>{{ task.title }}</h3>
 					<p class="task-item-description cut-text">
@@ -10,8 +18,8 @@
 					</p>
 					<p class="task-item-date">{{ task.date }}</p>
 				</div>
-			</div>
-		</router-link>
+			</router-link>
+		</div>
 	</li>
 </template>
 
@@ -19,6 +27,16 @@
 export default {
 	props: {
 		task: Object,
+	},
+	methods: {
+		toggleTaskStatus() {
+			this.$store.dispatch('toggleTaskStatus', this.task.id);
+		},
+	},
+	computed: {
+		isActive() {
+			return this.task.isCompleted;
+		},
 	},
 };
 </script>

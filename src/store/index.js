@@ -23,6 +23,11 @@ export default new Vuex.Store({
 		CREATE_TASK(state, task) {
 			state.tasks.push(task);
 		},
+		TOGGLE_TASK_STATUS(state, taskID) {
+			state.tasks = state.tasks.map(t =>
+				t.id === taskID ? { ...t, isCompleted: !t.isCompleted } : t
+			);
+		},
 	},
 	actions: {
 		fetchEvents({ commit }) {
@@ -37,6 +42,9 @@ export default new Vuex.Store({
 		},
 		createTask({ commit }, task) {
 			commit('CREATE_TASK', task);
+		},
+		toggleTaskStatus({ commit }, id) {
+			commit('TOGGLE_TASK_STATUS', id);
 		},
 	},
 	getters: {
