@@ -14,7 +14,7 @@
 				</div>
 				<div class="tasks-summary-container">
 					<div class="task-progress-bar">
-						--------------------------
+						/////////////------------ 50%
 					</div>
 					<div class="task-numeric-summary">
 						<span>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
 	computed: {
@@ -58,8 +58,11 @@ export default {
 		...mapState(['projects']),
 	},
 	methods: {
+		...mapActions(['setCategoryFilter']),
 		filterCategory($event) {
-			console.log($event.target.getAttribute('data-category'));
+			const selectedCategory =
+				$event.target.getAttribute('data-category');
+			this.setCategoryFilter(selectedCategory);
 		},
 	},
 };
@@ -90,6 +93,9 @@ export default {
 .task-numeric-summary * p {
 	font-size: 10px;
 	display: flex;
+}
+.task-progress-bar {
+	margin-bottom: 10px;
 }
 .user-personal-data > * {
 	margin: 20px 0;

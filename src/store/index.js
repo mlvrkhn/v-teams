@@ -13,7 +13,7 @@ export default new Vuex.Store({
 		tasks: [],
 		task: {},
 		projects: ['Development', 'Sport', 'Health', 'Social', 'All'],
-		activeFilter: 'Social',
+		activeFilter: 'All',
 	},
 	mutations: {
 		SET_TASKS(state, tasks) {
@@ -29,6 +29,9 @@ export default new Vuex.Store({
 			state.tasks = state.tasks.map(t =>
 				t.id === taskID ? { ...t, isCompleted: !t.isCompleted } : t
 			);
+		},
+		SET_CATEGORY_FILTER(state, category) {
+			state.activeFilter = category;
 		},
 	},
 	actions: {
@@ -47,6 +50,9 @@ export default new Vuex.Store({
 		},
 		toggleTaskStatus({ commit }, id) {
 			commit('TOGGLE_TASK_STATUS', id);
+		},
+		setCategoryFilter({ commit }, category) {
+			commit('SET_CATEGORY_FILTER', category);
 		},
 	},
 	getters: {

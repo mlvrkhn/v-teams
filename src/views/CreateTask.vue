@@ -80,6 +80,9 @@ export default {
 	width: 90%;
 	justify-content: center;
 }
+.task-form > * {
+	margin: 5px 0;
+}
 .datepicker {
 	text-align: center;
 }

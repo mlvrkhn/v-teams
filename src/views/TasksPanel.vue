@@ -53,6 +53,7 @@ export default {
 	computed: {
 		...mapState(['tasks', 'activeFilter']),
 		filteredTasks() {
+			if (this.activeFilter === 'All') return this.tasks;
 			return this.tasks.filter(task => {
 				if (task.category === this.activeFilter) {
 					return task;
@@ -77,14 +78,6 @@ li a {
 	justify-content: space-between;
 	height: 100%;
 }
-/* .task-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-} */
 .task-item-container {
 	display: flex;
 	align-items: center;

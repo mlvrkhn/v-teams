@@ -18,3 +18,6 @@ npm run build
 ### To Do
 
 -   is Completed in Details Panel is not reactive
+-   hide and show completed
+-   searchbar
+-

@@ -8,7 +8,4 @@
 export default {};
 </script>
 
-<style scoped>
-.submit-button {
-}
-</style>
+<style scoped></style>
