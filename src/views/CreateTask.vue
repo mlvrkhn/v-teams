@@ -13,13 +13,15 @@
 				<option>Teambuilding</option>
 				<option>Other</option>
 			</select>
-			<input type="date" v-model="task.date" />
+			<datepicker v-model="task.date" placeholder="Select a date" />
 			<button type="submit">Add</button>
 		</form>
 	</div>
 </template>
 
 <script>
+import Datepicker from 'vuejs-datepicker';
+
 export default {
 	data() {
 		return {
@@ -32,17 +34,22 @@ export default {
 		},
 		createNewTask() {
 			const id = Math.floor(Math.random() * 10000000);
-			const user = this.$store.state.user;
+			const owner = this.$store.state.user;
 
 			return {
 				id,
-				user,
+				owner,
 				category: '',
 				title: '',
 				description: '',
 				date: '',
+				isCompleted: false,
+				attendees: [],
 			};
 		},
+	},
+	components: {
+		Datepicker,
 	},
 };
 </script>
