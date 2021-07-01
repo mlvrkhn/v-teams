@@ -12,6 +12,7 @@ export default new Vuex.Store({
 		},
 		tasks: [],
 		task: {},
+		projects: ['Development', 'Sport', 'Health', 'Social'],
 	},
 	mutations: {
 		SET_TASKS(state, tasks) {

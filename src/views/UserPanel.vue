@@ -26,23 +26,42 @@
 							<p>To Do</p>
 						</span>
 						<span>
-							<h3>240</h3>
+							<h3>60</h3>
 							<p>Archived</p>
 						</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="projects-container">PROJECTS</div>
+		<div class="projects-container">
+			<h2>PROJECTS</h2>
+			<a
+				class="project-item"
+				:data-category="p"
+				v-for="p in projects"
+				:key="p"
+				@click="filterCategory"
+			>
+				👉 {{ p }}
+			</a>
+		</div>
 		<div class="team-container">TEAM</div>
 	</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
-	computed: mapGetters(['completedTaskCount', 'notCompletedTaskCount']),
+	computed: {
+		...mapGetters(['completedTaskCount', 'notCompletedTaskCount']),
+		...mapState(['projects']),
+	},
+	methods: {
+		filterCategory($event) {
+			console.log($event.target.getAttribute('data-category'));
+		},
+	},
 };
 </script>
 
@@ -77,5 +96,18 @@ export default {
 }
 .user-personal-avatar {
 	height: 80px;
+}
+.projects-container > h2 {
+	margin-bottom: 10px;
+}
+.project-item {
+	text-align: left;
+	display: block;
+	margin-left: 15%;
+	margin-bottom: 0.5rem;
+	cursor: pointer;
+}
+.project-item:hover {
+	transform: scale(1.05);
 }
 </style>
