@@ -2,7 +2,7 @@
 	<div class="list-items-container">
 		<ul class="task-list">
 			<li
-				v-for="(task, index) in filteredTasks"
+				v-for="(task, index) in searchResults"
 				:task="task"
 				:key="index"
 			>
@@ -51,11 +51,21 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(['tasks', 'activeFilter']),
+		...mapState(['tasks', 'activeFilter', 'searchQuery']),
 		filteredTasks() {
 			if (this.activeFilter === 'All') return this.tasks;
 			return this.tasks.filter(task => {
 				if (task.category === this.activeFilter) {
+					return task;
+				}
+			});
+		},
+		searchResults() {
+			return this.filteredTasks.filter(task => {
+				if (
+					task.title.includes(this.searchQuery) ||
+					task.description.includes(this.searchQuery)
+				) {
 					return task;
 				}
 			});
