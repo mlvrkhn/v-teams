@@ -14,6 +14,7 @@ export default new Vuex.Store({
 		task: {},
 		projects: ['Development', 'Sport', 'Health', 'Social', 'All'],
 		activeFilter: 'All',
+		searchQuery: '',
 	},
 	mutations: {
 		SET_TASKS(state, tasks) {
@@ -32,6 +33,9 @@ export default new Vuex.Store({
 		},
 		SET_CATEGORY_FILTER(state, category) {
 			state.activeFilter = category;
+		},
+		UPDATE_SEARCH_QUERY(state, value) {
+			state.searchQuery = value;
 		},
 	},
 	actions: {
@@ -53,6 +57,9 @@ export default new Vuex.Store({
 		},
 		setCategoryFilter({ commit }, category) {
 			commit('SET_CATEGORY_FILTER', category);
+		},
+		updateSearchQuery({ commit }, value) {
+			commit('UPDATE_SEARCH_QUERY', value);
 		},
 	},
 	getters: {
