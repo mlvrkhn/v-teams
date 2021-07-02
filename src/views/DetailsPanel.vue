@@ -1,6 +1,7 @@
 <template>
 	<div class="column details-container">
 		<h2 class="task-details-title">{{ task.title }}</h2>
+		<!-- <h2 class="task-details-user">{{ user }}</h2> -->
 		<p class="task-details-date">🕰 {{ task.date }}</p>
 		<p class="task-details-description">{{ task.description }}</p>
 		<span class="task-details-completed"

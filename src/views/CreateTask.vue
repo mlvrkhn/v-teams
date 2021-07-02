@@ -25,8 +25,10 @@
 <script>
 import Datepicker from 'vuejs-datepicker';
 import TaskService from '../../services/TaskService';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
+	computed: { ...mapState(['user']), ...mapGetters(['getUser']) },
 	data() {
 		return {
 			task: this.createNewTask(),
@@ -47,7 +49,7 @@ export default {
 		},
 		createNewTask() {
 			const id = Math.floor(Math.random() * 10000000);
-			const owner = this.$store.state.user;
+			const owner = this.getUser;
 
 			return {
 				id,
