@@ -37,6 +37,7 @@
 			<h2>PROJECTS</h2>
 			<a
 				class="project-item"
+				:class="{ active: activeFilter === p }"
 				:data-category="p"
 				v-for="p in projects"
 				:key="p"
@@ -55,7 +56,7 @@ import { mapActions, mapGetters, mapState } from 'vuex';
 export default {
 	computed: {
 		...mapGetters(['completedTaskCount', 'notCompletedTaskCount']),
-		...mapState(['projects']),
+		...mapState(['projects', 'activeFilter']),
 	},
 	methods: {
 		...mapActions(['setCategoryFilter']),
@@ -115,5 +116,9 @@ export default {
 }
 .project-item:hover {
 	transform: scale(1.05);
+}
+.active {
+	background-color: lightpink;
+	/* color: green; */
 }
 </style>

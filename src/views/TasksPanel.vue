@@ -96,14 +96,13 @@ li a {
 	padding: 0.5rem;
 }
 .task-item-container:hover {
-	background-color: rgb(167, 167, 167);
+	background-color: lightpink;
 }
 .task-item {
 	display: flex;
 	text-align: left;
 	margin-left: 0.5rem;
 	flex-direction: column;
-	/* width: 100%; */
 }
 .task-item-description {
 	font-size: 12px;
