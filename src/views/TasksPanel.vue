@@ -51,7 +51,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(['tasks', 'activeFilter', 'searchQuery']),
+		...mapState(['tasks/tasks', 'activeFilter', 'searchQuery']),
 		filteredTasks() {
 			if (this.activeFilter === 'All') return this.tasks;
 			return this.tasks.filter(task => {
@@ -61,6 +61,7 @@ export default {
 			});
 		},
 		searchResults() {
+			if (!this.filteredTasks) return this.tasks;
 			return this.filteredTasks.filter(task => {
 				if (
 					task.title.includes(this.searchQuery) ||

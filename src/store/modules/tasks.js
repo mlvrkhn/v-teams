@@ -1,6 +1,6 @@
 import TaskService from '@/store/modules/tasks';
 
-export const tasks = {
+export default {
 	namespaced: true,
 	state: {
 		tasks: [],

@@ -25,11 +25,10 @@
 <script>
 import Datepicker from 'vuejs-datepicker';
 import TaskService from '../../services/TaskService';
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
 	computed: {
-		...mapState(['user']),
 		...mapGetters({
 			getUser: 'user/getUser',
 		}),

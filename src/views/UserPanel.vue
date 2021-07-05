@@ -55,14 +55,15 @@ import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
 	computed: {
-		...mapGetters(['completedTaskCount', 'notCompletedTaskCount']),
+		...mapGetters('tasks', ['completedTaskCount', 'notCompletedTaskCount']),
 		...mapState(['projects', 'activeFilter']),
 	},
 	methods: {
 		...mapActions(['setCategoryFilter']),
 		filterCategory($event) {
-			const selectedCategory =
-				$event.target.getAttribute('data-category');
+			const selectedCategory = $event.target.getAttribute(
+				'data-category'
+			);
 			this.setCategoryFilter(selectedCategory);
 		},
 	},

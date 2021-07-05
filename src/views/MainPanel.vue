@@ -16,7 +16,8 @@ import { mapState } from 'vuex';
 export default {
 	components: { UserPanel, TasksPanel },
 	created() {
-		this.$store.dispatch('fetchEvents');
+		// this.$store.tasks.dispatch('tasks/fetchTasks');
+		// this.$store.dispatch('tasks/fetchTasks', null, { root: true });
 	},
 	computed: {
 		...mapState(['tasks']),
