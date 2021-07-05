@@ -4,9 +4,7 @@ export const tasks = {
 	namespaced: true,
 	state: {
 		tasks: [],
-		task: {
-			martin: '1',
-		},
+		task: {},
 	},
 	mutations: {
 		SET_TASKS(state, tasks) {
@@ -36,13 +34,13 @@ export const tasks = {
 		},
 	},
 	actions: {
-		fetchEvents({ commit }) {
-			return TaskService.getEvents().then(res => {
+		fetchTasks({ commit }) {
+			return TaskService.getTasks().then(res => {
 				commit('SET_TASKS', res.data);
 			});
 		},
-		fetchEvent({ commit }, id) {
-			return TaskService.getEvent(id).then(res => {
+		fetchTask({ commit }, id) {
+			return TaskService.getTask(id).then(res => {
 				commit('SET_TASK', res.data);
 			});
 		},

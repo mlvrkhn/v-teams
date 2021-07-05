@@ -28,7 +28,12 @@ import TaskService from '../../services/TaskService';
 import { mapGetters, mapState } from 'vuex';
 
 export default {
-	computed: { ...mapState(['user']), ...mapGetters(['getUser']) },
+	computed: {
+		...mapState(['user']),
+		...mapGetters({
+			getUser: 'user/getUser',
+		}),
+	},
 	data() {
 		return {
 			task: this.createNewTask(),

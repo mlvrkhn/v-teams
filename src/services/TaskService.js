@@ -11,10 +11,10 @@ const apiClient = axios.create({
 });
 
 export default {
-	getEvents() {
+	getTasks() {
 		return apiClient.get('/tasks');
 	},
-	getEvent(id) {
+	getTask(id) {
 		return apiClient.get('/tasks/' + id);
 	},
 	postEvent(task) {
