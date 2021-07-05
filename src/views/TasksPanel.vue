@@ -42,16 +42,17 @@ export default {
 	components: {
 		SubmitButton,
 	},
-	props: {
-		task: Object,
-	},
 	methods: {
 		toggleTaskStatus(id) {
-			this.$store.dispatch('toggleTaskStatus', id);
+			this.$store.dispatch('tasks/toggleTaskStatus', id);
 		},
 	},
 	computed: {
-		...mapState(['tasks/tasks', 'activeFilter', 'searchQuery']),
+		...mapState({
+			tasks: state => state.tasks.tasks,
+			activeFilter: state => state.activeFilter,
+			searchQuery: state => state.searchQuery,
+		}),
 		filteredTasks() {
 			if (this.activeFilter === 'All') return this.tasks;
 			return this.tasks.filter(task => {
@@ -61,7 +62,7 @@ export default {
 			});
 		},
 		searchResults() {
-			if (!this.filteredTasks) return this.tasks;
+			if (this.filteredTasks.length === 0) return this.tasks;
 			return this.filteredTasks.filter(task => {
 				if (
 					task.title.includes(this.searchQuery) ||
@@ -70,9 +71,6 @@ export default {
 					return task;
 				}
 			});
-		},
-		isActive() {
-			return this.task.isCompleted;
 		},
 	},
 };

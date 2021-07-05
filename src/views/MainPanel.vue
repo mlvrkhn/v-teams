@@ -11,16 +11,19 @@
 <script>
 import TasksPanel from './TasksPanel.vue';
 import UserPanel from './UserPanel.vue';
-import { mapState } from 'vuex';
 
 export default {
 	components: { UserPanel, TasksPanel },
 	created() {
-		// this.$store.tasks.dispatch('tasks/fetchTasks');
-		// this.$store.dispatch('tasks/fetchTasks', null, { root: true });
+		this.getTasks();
 	},
 	computed: {
-		...mapState(['tasks']),
+		// ...mapActions('tasks', ['fetchTasks']),
+	},
+	methods: {
+		getTasks() {
+			this.$store.dispatch('tasks/fetchTasks');
+		},
 	},
 };
 </script>

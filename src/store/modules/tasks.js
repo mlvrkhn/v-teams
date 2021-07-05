@@ -1,10 +1,28 @@
-import TaskService from '@/store/modules/tasks';
+import TaskService from '@/services/TaskService';
 
 export default {
 	namespaced: true,
 	state: {
 		tasks: [],
-		task: {},
+		task: {
+			id: 291242,
+			owner: {
+				name: 'Pau',
+				id: 3,
+			},
+			title: 'Random title',
+			description:
+				'In Information Technology, a boilerplate is a unit of writing that can be reused over and over without change. By extension, the idea is sometimes applied to reusable programming, as in “boilerplate code.',
+			category: 'Social',
+			date: '11-11-2019',
+			isCompleted: false,
+			attendees: [
+				{
+					id: 7,
+					name: 'Mbappe',
+				},
+			],
+		},
 	},
 	mutations: {
 		SET_TASKS(state, tasks) {

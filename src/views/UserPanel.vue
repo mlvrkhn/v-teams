@@ -120,6 +120,5 @@ export default {
 }
 .active {
 	background-color: lightpink;
-	/* color: green; */
 }
 </style>

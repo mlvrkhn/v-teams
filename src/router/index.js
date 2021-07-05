@@ -12,15 +12,12 @@ const routes = [
 	},
 	{
 		path: '/tasks/create',
-		// name: 'create',
 		component: CreateTask,
-		// props: true,
 	},
 	{
 		path: '/tasks/:id',
 		name: 'tasks',
 		component: DetailsPanel,
-		// props: true,
 	},
 ];
 

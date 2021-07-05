@@ -24,14 +24,15 @@
 
 <script>
 import Datepicker from 'vuejs-datepicker';
-import TaskService from '../../services/TaskService';
+import TaskService from '@/services/TaskService';
 import { mapGetters } from 'vuex';
 
 export default {
 	computed: {
-		...mapGetters({
-			getUser: 'user/getUser',
-		}),
+		// ...mapGetters({
+		// 	getUser: 'user/getUser',
+		// }),
+		...mapGetters(['user/getUser']),
 	},
 	data() {
 		return {
@@ -41,7 +42,7 @@ export default {
 	methods: {
 		handleSubmit() {
 			this.$store
-				.dispatch('createTask', this.task)
+				.dispatch('tasks/createTask', this.task)
 				.then(() => {
 					TaskService.postEvent(this.task);
 					this.task = this.createNewTask();
@@ -54,6 +55,7 @@ export default {
 		createNewTask() {
 			const id = Math.floor(Math.random() * 10000000);
 			const owner = this.getUser;
+			console.log('🚀 ~ createNewTask ~ owner', owner);
 
 			return {
 				id,

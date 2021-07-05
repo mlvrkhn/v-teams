@@ -1,7 +1,7 @@
 <template>
 	<div class="column details-container">
 		<h2 class="task-details-title">{{ task.title }}</h2>
-		<!-- <h2 class="task-details-user">{{ user }}</h2> -->
+		<h2 class="task-details-user">{{ user.name }}</h2>
 		<p class="task-details-date">🕰 {{ task.date }}</p>
 		<p class="task-details-description">{{ task.description }}</p>
 		<span class="task-details-completed"
@@ -15,20 +15,25 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
 	created() {
-		this.fetchEvent(this.taskID);
+		this.getTask();
 	},
 	computed: {
 		taskID() {
 			return this.$route.params.id;
 		},
-		...mapState(['task']),
+		...mapState({
+			task: state => state.tasks.task,
+			user: state => state.user.user,
+		}),
 	},
 	methods: {
-		...mapActions(['fetchEvent']),
+		getTask() {
+			this.$store.dispatch('tasks/fetchTask', this.taskID);
+		},
 	},
 };
 </script>
