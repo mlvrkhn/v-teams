@@ -20,7 +20,7 @@ export default {
 	postTask(task) {
 		return apiClient.post('/tasks', task);
 	},
-	updateTaskStatus(task, id) {
-		return apiClient.put(`/tasks/${id}`, task);
+	updateTaskStatus(task) {
+		return apiClient.put(`/tasks/${task.id}`, task);
 	},
 };

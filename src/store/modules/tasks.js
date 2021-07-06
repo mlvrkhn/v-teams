@@ -37,14 +37,16 @@ export default {
 			commit('CREATE_TASK', task);
 			// send to server
 		},
-		toggleTaskStatus({ commit }, id) {
-			commit('TOGGLE_TASK_STATUS', id);
+		toggleTaskStatus({ commit }, task) {
+			commit('TOGGLE_TASK_STATUS', task.id);
+			TaskService.updateTaskStatus(task);
 
 			// send to server
-			TaskService.getTask(id).then(res => {
-				res.data.isCompleted = !res.data.isCompleted;
-				TaskService.updateTaskStatus(res.data, id);
-			});
+			// maybe there is better way
+			// TaskService.getTask(id).then(res => {
+			// 	res.data.isCompleted = !res.data.isCompleted;
+			// 	TaskService.updateTaskStatus(res.data, id);
+			// });
 		},
 	},
 	getters: {

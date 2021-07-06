@@ -12,7 +12,7 @@
 							type="checkbox"
 							class="toggle_button"
 							id="toggle-button"
-							@click="toggleTaskStatus(task.id)"
+							@click="toggleTaskStatus(task)"
 						/>
 					</label>
 					<router-link
@@ -43,9 +43,8 @@ export default {
 		SubmitButton,
 	},
 	methods: {
-		toggleTaskStatus(id) {
-			this.$store.dispatch('tasks/toggleTaskStatus', id);
-			// .then(res => console.log(res));
+		toggleTaskStatus(task) {
+			this.$store.dispatch('tasks/toggleTaskStatus', task);
 		},
 	},
 	computed: {
