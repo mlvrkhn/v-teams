@@ -48,14 +48,15 @@ export default {
 					this.task = this.createNewTask();
 				})
 				.catch(err => {
-					console.log(err.message);
-					console.log('Something went wrong with you TASK');
+					console.log(
+						'Something went wrong with you TASK',
+						err.message
+					);
 				});
 		},
 		createNewTask() {
 			const id = Math.floor(Math.random() * 10000000);
-			const owner = this.getUser;
-			console.log('🚀 ~ createNewTask ~ owner', owner);
+			const owner = this.$store.getters['user/getUser'];
 
 			return {
 				id,
