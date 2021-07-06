@@ -97,28 +97,6 @@
           "name": "Mbappe"
         }
       ]
-    },
-    {
-      "id": 2072530,
-      "owner": {
-        "id": "11",
-        "name": "Martin"
-      },
-      "category": "",
-      "title": "aaaaaa",
-      "description": "",
-      "date": "",
-      "isCompleted": false,
-      "attendees": []
-    },
-    {
-      "id": 9273857,
-      "category": "Other",
-      "title": "aaaaaaa",
-      "description": "ddd",
-      "date": "",
-      "isCompleted": false,
-      "attendees": []
     }
   ]
 }

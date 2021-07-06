@@ -45,6 +45,7 @@ export default {
 	methods: {
 		toggleTaskStatus(id) {
 			this.$store.dispatch('tasks/toggleTaskStatus', id);
+			// .then(res => console.log(res));
 		},
 	},
 	computed: {

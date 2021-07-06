@@ -22,17 +22,6 @@ export default {
 			);
 		},
 	},
-	getters: {
-		getTaskByID: state => id => {
-			return state.tasks.find(task => task.id === id);
-		},
-		completedTaskCount: state => {
-			return state.tasks.filter(task => task.isCompleted).length || 0;
-		},
-		notCompletedTaskCount: state => {
-			return state.tasks.filter(task => !task.isCompleted).length || 0;
-		},
-	},
 	actions: {
 		fetchTasks({ commit }) {
 			return TaskService.getTasks().then(res => {
@@ -46,11 +35,27 @@ export default {
 		},
 		createTask({ commit }, task) {
 			commit('CREATE_TASK', task);
-			// commit to json
+			// send to server
 		},
 		toggleTaskStatus({ commit }, id) {
 			commit('TOGGLE_TASK_STATUS', id);
-			// commit to json
+
+			// send to server
+			TaskService.getTask(id).then(res => {
+				res.data.isCompleted = !res.data.isCompleted;
+				TaskService.updateTaskStatus(res.data, id);
+			});
+		},
+	},
+	getters: {
+		getTaskByID: state => id => {
+			return state.tasks.find(task => task.id === id);
+		},
+		completedTaskCount: state => {
+			return state.tasks.filter(task => task.isCompleted).length || 0;
+		},
+		notCompletedTaskCount: state => {
+			return state.tasks.filter(task => !task.isCompleted).length || 0;
 		},
 	},
 };

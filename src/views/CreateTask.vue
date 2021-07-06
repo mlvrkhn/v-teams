@@ -46,7 +46,7 @@ export default {
 			this.$store
 				.dispatch('tasks/createTask', this.task)
 				.then(() => {
-					TaskService.postEvent(this.task);
+					TaskService.postTask(this.task);
 					this.task = this.createNewTask();
 				})
 				.catch(err => {
