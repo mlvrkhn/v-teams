@@ -41,6 +41,7 @@ export default {
 <style scoped lang="scss">
 .details-container {
 	display: flex;
+	padding: 5px;
 	flex-direction: column;
 	text-align: left;
 	> * {

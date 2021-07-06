@@ -20,3 +20,7 @@ npm run build
 -   add sass (sass-node deprecated)
 -   add reset.scss
 -   add global \_variables
+
+### Todo
+
+-   make progress bar reactive

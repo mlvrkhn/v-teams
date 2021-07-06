@@ -77,6 +77,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use '../styles/_variables.scss';
+
 .tasks-summary-container {
 	display: flex;
 	flex-direction: column;
@@ -123,14 +125,13 @@ export default {
 	padding-left: 5px;
 	cursor: pointer;
 	&:hover {
-		background-color: rgb(255, 182, 193);
+		background-color: variables.$secondary-color;
 	}
 }
 .active {
-	background-color: hotpink;
+	background-color: variables.$primary-color;
 }
 .progress {
-	background: rgba(255, 255, 255, 0.1);
 	justify-content: flex-start;
 	border-radius: 100px;
 	align-items: center;
@@ -141,9 +142,9 @@ export default {
 	width: 100%;
 	&-value {
 		animation: load 3s normal forwards;
-		box-shadow: 0 10px 40px -10px #fff;
+		box-shadow: 0 10px 40px -10px variables.$primary-color;
 		border-radius: 100px;
-		background: lightpink;
+		background: variables.$secondary-color;
 		height: 20px;
 		padding: 1px 0;
 		margin-bottom: 2rem;
@@ -156,7 +157,7 @@ export default {
 		width: 0;
 	}
 	100% {
-		width: 99%;
+		width: 40%;
 	}
 }
 </style>

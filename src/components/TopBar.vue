@@ -26,10 +26,10 @@ export default {
 <style lang="scss" scoped>
 .top-bar {
 	height: 60px;
-	border: 1px solid darkgrey;
+	width: 100%;
+	border-bottom: 1px solid darkgrey;
 	display: grid;
 	grid-template-columns: 25% 75%;
-
 	.panel {
 		display: flex;
 		justify-content: center;

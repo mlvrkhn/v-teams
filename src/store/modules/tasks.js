@@ -52,7 +52,13 @@ export default {
 		notCompletedTaskCount: state => {
 			return state.tasks.filter(task => !task.isCompleted).length || 0;
 		},
-		getTasksFulfilmentRate: (state, getters) =>
-			(getters.completedTaskCount / getters.getTotalTaskCount) * 100,
+		getTasksFulfilmentRate: (state, getters) => {
+			// const lengthInPercent =
+			// 	(getters.completedTaskCount / getters.getTotalTaskCount) * 100;
+			// return `${lengthInPercent}%`;
+			return (
+				(getters.completedTaskCount / getters.getTotalTaskCount) * 100
+			);
+		},
 	},
 };

@@ -2,7 +2,7 @@
 	<div class="main-container">
 		<user-panel></user-panel>
 		<div class="column">
-			<tasks-panel></tasks-panel>
+			<tasks-panel class="darker"></tasks-panel>
 		</div>
 		<router-view :key="$route.fullPath" />
 	</div>
@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss">
+@use '../styles/_variables.scss';
+
 .main-container {
 	height: 80%;
 	display: grid;
@@ -37,6 +39,10 @@ export default {
 }
 .column {
 	width: 100%;
-	border: 1px solid darkgrey;
+	/* border: 1px solid darkgrey; */
+	padding: 5px;
+	.darker {
+		background-color: variables.$blueish-color;
+	}
 }
 </style>
