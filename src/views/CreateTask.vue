@@ -32,7 +32,9 @@ export default {
 		// ...mapGetters({
 		// 	getUser: 'user/getUser',
 		// }),
-		...mapGetters(['user/getUser']),
+		...mapGetters({
+			getUser: 'user/getUser',
+		}),
 	},
 	data() {
 		return {
@@ -56,7 +58,7 @@ export default {
 		},
 		createNewTask() {
 			const id = Math.floor(Math.random() * 10000000);
-			const owner = this.$store.getters['user/getUser'];
+			const owner = this.getUser;
 
 			return {
 				id,
