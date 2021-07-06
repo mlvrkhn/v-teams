@@ -68,7 +68,7 @@
       "description": "The term boilerplate refers to standardized text, copy, documents, methods, or procedures that may be used over again without making major changes to the original. ... In the field of contract law, documents contain boilerplate language, which is a language that is considered generic or standard in contracts.",
       "category": "Development",
       "date": "12-03-2020",
-      "isCompleted": false,
+      "isCompleted": true,
       "attendees": [
         {
           "id": 5,

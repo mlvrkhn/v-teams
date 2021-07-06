@@ -14,7 +14,7 @@
 				</div>
 				<div class="tasks-summary-container">
 					<div class="task-progress-bar">
-						/////////////------------ 50%
+						{{ getTasksFulfilmentRate }} %
 					</div>
 					<div class="task-numeric-summary">
 						<span>
@@ -55,7 +55,11 @@ import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
 	computed: {
-		...mapGetters('tasks', ['completedTaskCount', 'notCompletedTaskCount']),
+		...mapGetters('tasks', [
+			'completedTaskCount',
+			'notCompletedTaskCount',
+			'getTasksFulfilmentRate',
+		]),
 		...mapState(['projects', 'activeFilter']),
 	},
 	methods: {

@@ -35,29 +35,24 @@ export default {
 		},
 		createTask({ commit }, task) {
 			commit('CREATE_TASK', task);
-			// send to server
 		},
 		toggleTaskStatus({ commit }, task) {
 			commit('TOGGLE_TASK_STATUS', task.id);
 			TaskService.updateTaskStatus(task);
-
-			// send to server
-			// maybe there is better way
-			// TaskService.getTask(id).then(res => {
-			// 	res.data.isCompleted = !res.data.isCompleted;
-			// 	TaskService.updateTaskStatus(res.data, id);
-			// });
 		},
 	},
 	getters: {
 		getTaskByID: state => id => {
 			return state.tasks.find(task => task.id === id);
 		},
+		getTotalTaskCount: state => state.tasks.length,
 		completedTaskCount: state => {
 			return state.tasks.filter(task => task.isCompleted).length || 0;
 		},
 		notCompletedTaskCount: state => {
 			return state.tasks.filter(task => !task.isCompleted).length || 0;
 		},
+		getTasksFulfilmentRate: (state, getters) =>
+			(getters.completedTaskCount / getters.getTotalTaskCount) * 100,
 	},
 };
