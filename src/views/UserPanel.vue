@@ -13,8 +13,10 @@
 					<span>🔔</span>
 				</div>
 				<div class="tasks-summary-container">
-					<div class="task-progress-bar">
-						{{ getTasksFulfilmentRate }} %
+					<div class="progress">
+						<div class="progress-value">
+							{{ getTasksFulfilmentRate }} %
+						</div>
 					</div>
 					<div class="task-numeric-summary">
 						<span>
@@ -26,7 +28,7 @@
 							<p>To Do</p>
 						</span>
 						<span>
-							<h3>60</h3>
+							<h3>6</h3>
 							<p>Archived</p>
 						</span>
 					</div>
@@ -80,7 +82,7 @@ export default {
 	flex-direction: column;
 	justify-items: center;
 	align-items: center;
-	margin-top: 2rem;
+	margin: 2rem 5px;
 }
 .user-panel-container {
 	display: flex;
@@ -100,9 +102,6 @@ export default {
 	font-size: 10px;
 	display: flex;
 }
-.task-progress-bar {
-	margin-bottom: 10px;
-}
 .user-personal-data > * {
 	margin: 20px 0;
 }
@@ -115,14 +114,47 @@ export default {
 .project-item {
 	text-align: left;
 	display: block;
-	margin-left: 15%;
 	margin-bottom: 0.5rem;
+	padding-left: 5px;
 	cursor: pointer;
 }
 .project-item:hover {
-	transform: scale(1.05);
+	background-color: lightpink;
 }
 .active {
-	background-color: lightpink;
+	background-color: hotpink;
+}
+
+/* progress bar */
+.progress {
+	background: rgba(255, 255, 255, 0.1);
+	justify-content: flex-start;
+	border-radius: 100px;
+	align-items: center;
+	position: relative;
+	padding: 0 3px;
+	display: flex;
+	height: 20px;
+	width: 100%;
+}
+.progress-value {
+	animation: load 3s normal forwards;
+	box-shadow: 0 10px 40px -10px #fff;
+	border-radius: 100px;
+	background: lightpink;
+	height: 20px;
+	padding: 1px 0;
+	margin-bottom: 2rem;
+	text-align: center;
+	width: 0;
+}
+
+@keyframes load {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 99%;
+	}
 }
 </style>
