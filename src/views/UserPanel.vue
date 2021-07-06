@@ -90,7 +90,6 @@ export default {
 	display: flex;
 	width: 70%;
 	justify-content: space-around;
-
 	* p {
 		font-size: 10px;
 		display: flex;
@@ -125,7 +124,7 @@ export default {
 	padding-left: 5px;
 	cursor: pointer;
 	&:hover {
-		background-color: variables.$secondary-color;
+		background-color: variables.$primary-color;
 	}
 }
 .active {
@@ -142,9 +141,9 @@ export default {
 	width: 100%;
 	&-value {
 		animation: load 3s normal forwards;
-		box-shadow: 0 10px 40px -10px variables.$primary-color;
+		box-shadow: 0 10px 40px -10px;
 		border-radius: 100px;
-		background: variables.$secondary-color;
+		background: variables.$primary-color;
 		height: 20px;
 		padding: 1px 0;
 		margin-bottom: 2rem;

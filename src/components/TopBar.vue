@@ -2,7 +2,12 @@
 	<div class="top-bar">
 		<div class="panel">TASK MANAGER</div>
 		<div class="panel">
-			<input type="text" placeholder="Search" v-model="searchQuery" />
+			<input
+				class="panel-searchbar"
+				type="text"
+				placeholder="Search"
+				v-model="searchQuery"
+			/>
 		</div>
 	</div>
 </template>
@@ -24,6 +29,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../styles/_variables.scss';
+
 .top-bar {
 	height: 60px;
 	width: 100%;
@@ -35,6 +42,12 @@ export default {
 		justify-content: center;
 		align-items: center;
 		gap: 10px;
+		&-searchbar {
+			height: 25px;
+			width: 250px;
+			font-size: x-large;
+			padding: 5px 10px;
+		}
 	}
 }
 </style>

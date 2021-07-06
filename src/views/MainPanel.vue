@@ -40,7 +40,7 @@ export default {
 .column {
 	width: 100%;
 	/* border: 1px solid darkgrey; */
-	padding: 5px;
+	padding: 0 5px;
 	.darker {
 		background-color: variables.$blueish-color;
 	}
