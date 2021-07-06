@@ -1,0 +1,21 @@
+@use './_variables.scss';
+
+#app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: variables.$font-color;
+	background-color: ivory;
+}
+#nav {
+	padding: 30px;
+	height: 100vh;
+	a {
+		font-weight: bold;
+		color: variables.$font-color;
+	}
+	a.router-link-exact-active {
+		color: variables.$primary-color;
+	}
+}

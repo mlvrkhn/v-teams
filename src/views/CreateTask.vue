@@ -78,22 +78,27 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@use '../styles/_variables.scss';
+
 .form-container {
-	border: 1px solid darkgray;
+	border: 1px solid variables.$font-color;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+
 .task-form {
 	display: flex;
 	flex-direction: column;
 	width: 90%;
 	justify-content: center;
+
+	> * {
+		margin: 5px 0;
+	}
 }
-.task-form > * {
-	margin: 5px 0;
-}
+
 .datepicker {
 	text-align: center;
 }

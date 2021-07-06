@@ -1,14 +1,14 @@
 <template>
 	<div class="column details-container">
-		<h2 class="task-details-title">{{ task.title }}</h2>
-		<h2 class="task-details-user">{{ user.name }}</h2>
-		<p class="task-details-date">🕰 {{ task.date }}</p>
-		<p class="task-details-description">{{ task.description }}</p>
-		<span class="task-details-completed"
+		<h2 class="task-details__title">{{ task.title }}</h2>
+		<h2 class="task-details__user">{{ user.name }}</h2>
+		<p class="task-details__date">🕰 {{ task.date }}</p>
+		<p class="task-details__description">{{ task.description }}</p>
+		<span class="task-details__completed"
 			>Is completed? {{ task.isCompleted }}</span
 		>
-		<label class="task-details-attendees-label">Who is joining:</label>
-		<ul class="task-details-attendees-list">
+		<label class="task-details__attendees-label">Who is joining:</label>
+		<ul class="task-details__attendees-list">
 			<li v-for="(a, i) in task.attendees" :key="i">{{ a.name }}</li>
 		</ul>
 	</div>
@@ -38,25 +38,26 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .details-container {
 	display: flex;
 	flex-direction: column;
-	padding: 1rem;
 	text-align: left;
+	> * {
+		margin: 1rem 0;
+	}
 }
-.details-container > * {
-	margin: 1rem 0;
-}
-.task-details-title {
-	font-size: xx-large;
-	font-weight: 700;
-}
-.task-details-date {
-	font-size: small;
-}
-.task-details-attendees-label {
-	margin-bottom: 0;
-	font-weight: 500;
+.task-details {
+	&__title {
+		font-size: xx-large;
+		font-weight: 700;
+	}
+	&__date {
+		font-size: small;
+	}
+	&__attendees-label {
+		margin-bottom: 0;
+		font-weight: 500;
+	}
 }
 </style>

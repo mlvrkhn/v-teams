@@ -18,28 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './styles/reset.scss';
-
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	background-color: ivory;
-}
-
-#nav {
-	padding: 30px;
-	height: 100vh;
-}
-
-#nav a {
-	font-weight: bold;
-	color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-	color: rgb(255, 93, 117);
-}
+@use './styles/main.scss';
+@use './styles/_variables.scss';
+@use './styles/reset.scss';
 </style>

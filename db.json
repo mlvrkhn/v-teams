@@ -50,7 +50,7 @@
       "description": "Opis Pau D'arco jest powszechnie stosowane w Ameryce Łacińskiej, jak i Europie. Niektórzy uważają, że jest to najcenniejszy skarb ze spuścizny indiańskiej.",
       "category": "Social",
       "date": "21-11-1993",
-      "isCompleted": false,
+      "isCompleted": true,
       "attendees": [
         {
           "id": 7,

@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .main-container {
 	height: 80%;
 	display: grid;

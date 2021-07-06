@@ -18,7 +18,7 @@
 							{{ getTasksFulfilmentRate }} %
 						</div>
 					</div>
-					<div class="task-numeric-summary">
+					<div class="task-summary-numeric">
 						<span>
 							<h3>{{ completedTaskCount }}</h3>
 							<p>Completed</p>
@@ -84,29 +84,34 @@ export default {
 	align-items: center;
 	margin: 2rem 5px;
 }
-.user-panel-container {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	justify-content: space-between;
-}
-.user-personal-name {
-	font-weight: 700;
-}
-.task-numeric-summary {
+.task-summary-numeric {
 	display: flex;
 	width: 70%;
 	justify-content: space-around;
+
+	* p {
+		font-size: 10px;
+		display: flex;
+	}
 }
-.task-numeric-summary * p {
-	font-size: 10px;
-	display: flex;
-}
-.user-personal-data > * {
-	margin: 20px 0;
-}
-.user-personal-avatar {
-	height: 80px;
+.user {
+	&-panel-container {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: space-between;
+	}
+	&-personal {
+		&-name {
+			font-weight: 700;
+		}
+		&-data > * {
+			margin: 20px 0;
+		}
+		&-avatar {
+			height: 80px;
+		}
+	}
 }
 .projects-container > h2 {
 	margin-bottom: 10px;
@@ -117,15 +122,13 @@ export default {
 	margin-bottom: 0.5rem;
 	padding-left: 5px;
 	cursor: pointer;
-}
-.project-item:hover {
-	background-color: lightpink;
+	&:hover {
+		background-color: rgb(255, 182, 193);
+	}
 }
 .active {
 	background-color: hotpink;
 }
-
-/* progress bar */
 .progress {
 	background: rgba(255, 255, 255, 0.1);
 	justify-content: flex-start;
@@ -136,19 +139,18 @@ export default {
 	display: flex;
 	height: 20px;
 	width: 100%;
+	&-value {
+		animation: load 3s normal forwards;
+		box-shadow: 0 10px 40px -10px #fff;
+		border-radius: 100px;
+		background: lightpink;
+		height: 20px;
+		padding: 1px 0;
+		margin-bottom: 2rem;
+		text-align: center;
+		width: 0;
+	}
 }
-.progress-value {
-	animation: load 3s normal forwards;
-	box-shadow: 0 10px 40px -10px #fff;
-	border-radius: 100px;
-	background: lightpink;
-	height: 20px;
-	padding: 1px 0;
-	margin-bottom: 2rem;
-	text-align: center;
-	width: 0;
-}
-
 @keyframes load {
 	0% {
 		width: 0;

@@ -76,10 +76,12 @@ export default {
 };
 </script>
 
-<style scoped>
-li a {
-	text-decoration: none;
-	color: #fff;
+<style lang="scss" scoped>
+li {
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
 }
 .list-items-container {
 	display: flex;
@@ -87,30 +89,31 @@ li a {
 	justify-content: space-between;
 	height: 100%;
 }
-.task-item-container {
-	display: flex;
-	align-items: center;
-	height: 60px;
-	border-bottom: 1px solid darkgrey;
-	padding: 0.5rem;
-}
-.task-item-container:hover {
-	background-color: lightpink;
-}
 .task-item {
 	display: flex;
 	text-align: left;
 	margin-left: 0.5rem;
 	flex-direction: column;
-}
-.task-item-description {
-	font-size: 12px;
-	font-weight: 400;
-	outline: none;
-}
-.task-item-date {
-	font-size: 9px;
-	margin: 0;
+	&-container {
+		display: flex;
+		align-items: center;
+		height: 60px;
+		border-bottom: 1px solid darkgrey;
+		padding: 0.5rem;
+
+		&:hover {
+			background-color: lightpink;
+		}
+	}
+	&-description {
+		font-size: 12px;
+		font-weight: 400;
+		outline: none;
+	}
+	&-date {
+		font-size: 9px;
+		margin: 0;
+	}
 }
 .cut-text {
 	text-overflow: ellipsis;

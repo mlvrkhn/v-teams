@@ -15,9 +15,8 @@ npm run serve
 npm run build
 ```
 
-### To Do
+### Changelog
 
--   is Completed in Details Panel is not reactive
--   hide and show completed
--   searchbar
--
+-   add sass (sass-node deprecated)
+-   add reset.scss
+-   add global \_variables
