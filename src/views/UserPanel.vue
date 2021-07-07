@@ -14,7 +14,13 @@
 				</div>
 				<div class="tasks-summary-container">
 					<div class="progress">
-						<div class="progress-value">
+						<div
+							class="progress-value"
+							:style="{
+								'--progress-value':
+									getTasksFulfilmentRate + '%',
+							}"
+						>
 							{{ getTasksFulfilmentRate }} %
 						</div>
 					</div>
@@ -157,7 +163,7 @@ export default {
 		width: 0;
 	}
 	100% {
-		width: 80%;
+		width: var(--progress-value);
 	}
 }
 </style>

@@ -11,6 +11,7 @@
 						<input
 							type="checkbox"
 							class="toggle_button"
+							:checked="task.isCompleted"
 							id="toggle-button"
 							@click="toggleTaskStatus(task)"
 						/>

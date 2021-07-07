@@ -13,10 +13,6 @@ $font-color: #504b2c;
 	}
 }
 
-@function set-progressbar-length($len) {
-	@return $len + '%';
-}
-
 // set bg and text color
 // mixin is a function that does not return anything
 @mixin set-bg($color) {
