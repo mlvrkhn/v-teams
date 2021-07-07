@@ -78,6 +78,7 @@ export default {
 
 <style scoped lang="scss">
 @use '../styles/_variables.scss';
+@import '../styles/config';
 
 .tasks-summary-container {
 	display: flex;
@@ -156,7 +157,7 @@ export default {
 		width: 0;
 	}
 	100% {
-		width: 70%;
+		width: 80%;
 	}
 }
 </style>
