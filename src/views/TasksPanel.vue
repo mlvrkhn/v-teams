@@ -65,8 +65,12 @@ export default {
 			if (this.filteredTasks.length === 0) return this.tasks;
 			return this.filteredTasks.filter(task => {
 				if (
-					task.title.includes(this.searchQuery) ||
-					task.description.includes(this.searchQuery)
+					task.title
+						.toLowerCase()
+						.includes(this.searchQuery.toLowerCase()) ||
+					task.description
+						.toLowerCase()
+						.includes(this.searchQuery.toLowerCase())
 				) {
 					return task;
 				}

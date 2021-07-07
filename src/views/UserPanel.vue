@@ -140,7 +140,7 @@ export default {
 	height: 20px;
 	width: 100%;
 	&-value {
-		animation: load 3s normal forwards;
+		animation: load 2s normal forwards;
 		box-shadow: 0 10px 40px -10px;
 		border-radius: 100px;
 		background: variables.$primary-color;
@@ -156,7 +156,7 @@ export default {
 		width: 0;
 	}
 	100% {
-		width: 40%;
+		width: 70%;
 	}
 }
 </style>

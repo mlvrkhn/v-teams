@@ -36,8 +36,9 @@ export default {
 		createTask({ commit }, task) {
 			commit('CREATE_TASK', task);
 		},
-		toggleTaskStatus({ commit }, task) {
+		toggleTaskStatus({ commit, dispatch }, task) {
 			commit('TOGGLE_TASK_STATUS', task.id);
+			dispatch('fetchTask', task.id);
 			TaskService.updateTaskStatus(task);
 		},
 	},
@@ -53,9 +54,6 @@ export default {
 			return state.tasks.filter(task => !task.isCompleted).length || 0;
 		},
 		getTasksFulfilmentRate: (state, getters) => {
-			// const lengthInPercent =
-			// 	(getters.completedTaskCount / getters.getTotalTaskCount) * 100;
-			// return `${lengthInPercent}%`;
 			return (
 				(getters.completedTaskCount / getters.getTotalTaskCount) * 100
 			);

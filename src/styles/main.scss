@@ -1,12 +1,12 @@
 @use './_variables.scss';
+@import 'config';
 
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	color: variables.$font-color;
-	background-color: variables.$white-color;
+	@include set-bg(variables.$white-color);
 }
 #nav {
 	padding: 30px;

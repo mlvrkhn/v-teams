@@ -4,8 +4,8 @@
 		<h2 class="task-details__user">{{ user.name }}</h2>
 		<p class="task-details__date">🕰 {{ task.date }}</p>
 		<p class="task-details__description">{{ task.description }}</p>
-		<span class="task-details__completed"
-			>Is completed? {{ task.isCompleted }}</span
+		<span v-show="task.isCompleted" class="task-details__completed"
+			>✅ Completed!</span
 		>
 		<label class="task-details__attendees-label">Who is joining:</label>
 		<ul class="task-details__attendees-list">
